@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/base">
+<body>
+
+<div layout:fragment="content">
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h1>Fast page</h1>
+        </div>
+    </div>
+</div>
+
+<th:block layout:fragment="js">
+    <script type="application/javascript">
+        $(function () {
+            $.ajax({
+                dataType: "json",
+                url: '/cookies',
+                data: data,
+                success: success
+            });
+        });
+    </script>
+</th:block>
+
+</body>
+</html>
